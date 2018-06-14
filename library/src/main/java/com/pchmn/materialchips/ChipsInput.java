@@ -68,6 +68,7 @@ public class ChipsInput extends ScrollViewMaxHeight {
     private ChipValidator mChipValidator;
 
     private OnFocusChangeListener editTextOnFocusChange;
+    private OnClickListener editTextOnClickListener;
 
     public ChipsInput(Context context) {
         super(context);
@@ -364,6 +365,14 @@ public class ChipsInput extends ScrollViewMaxHeight {
 
     public void setEditTextOnFocusChange(OnFocusChangeListener editTextOnFocusChange) {
         this.editTextOnFocusChange = editTextOnFocusChange;
+    }
+
+    public OnClickListener getEditTextOnClickListener() {
+        return editTextOnClickListener;
+    }
+
+    public void setEditTextOnClickListener(OnClickListener editTextOnClickListener) {
+        this.editTextOnClickListener = editTextOnClickListener;
     }
 
     public interface ChipsListener {

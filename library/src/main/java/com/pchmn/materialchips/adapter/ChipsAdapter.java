@@ -201,6 +201,7 @@ public class ChipsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         });
 
         mEditText.setOnFocusChangeListener(mChipsInput.getEditTextOnFocusChange());
+        mEditText.setOnClickListener(mChipsInput.getEditTextOnClickListener());
         mEditText.setFocusable(true);
     }
 
