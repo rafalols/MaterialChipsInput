@@ -165,8 +165,6 @@ public class ChipsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             }
         });
 
-        mEditText.setOnFocusChangeListener(mChipsInput.getOnFocusChangeListener());
-        mEditText.setFocusable(true);
     }
 
     private void autofitEditText() {
@@ -201,6 +199,9 @@ public class ChipsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             }
 
         });
+
+        mEditText.setOnFocusChangeListener(mChipsInput.getOnFocusChangeListener());
+        mEditText.setFocusable(true);
     }
 
     private void handleClickOnEditText(ChipView chipView, final int position) {
