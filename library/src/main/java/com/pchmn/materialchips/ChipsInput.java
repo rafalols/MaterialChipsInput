@@ -211,13 +211,16 @@ public class ChipsInput extends ScrollViewMaxHeight {
         return chipView;
     }
 
-    public ChipsInputEditText getEditText() {
-        ChipsInputEditText editText = new ChipsInputEditText(mContext);
-        if(mHintColor != null)
-            editText.setHintTextColor(mHintColor);
-        if(mTextColor != null)
-            editText.setTextColor(mTextColor);
+    private ChipsInputEditText editText;
 
+    public ChipsInputEditText getEditText() {
+        if (editText == null) {
+            editText = new ChipsInputEditText(mContext);
+            if(mHintColor != null)
+                editText.setHintTextColor(mHintColor);
+            if(mTextColor != null)
+                editText.setTextColor(mTextColor);
+        }
         return editText;
     }
 
