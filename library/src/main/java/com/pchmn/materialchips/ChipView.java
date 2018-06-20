@@ -21,6 +21,7 @@ import com.pchmn.materialchips.model.Chip;
 import com.pchmn.materialchips.model.ChipInterface;
 import com.pchmn.materialchips.util.LetterTileProvider;
 import com.pchmn.materialchips.util.ViewUtil;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -210,7 +211,9 @@ public class ChipView extends RelativeLayout {
 
             // set icon
             if(mAvatarIconUri != null)
-                mAvatarIconImageView.setImageURI(mAvatarIconUri);
+                Picasso.with(mContext)
+                        .load(mAvatarIconUri)
+                        .into(mAvatarIconImageView);
             else if(mAvatarIconDrawable != null)
                 mAvatarIconImageView.setImageDrawable(mAvatarIconDrawable);
             else
