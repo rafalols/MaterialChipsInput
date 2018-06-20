@@ -20,6 +20,7 @@ import com.pchmn.materialchips.model.ChipInterface;
 import com.pchmn.materialchips.util.ColorUtil;
 import com.pchmn.materialchips.util.LetterTileProvider;
 import com.pchmn.materialchips.util.ViewUtil;
+import com.squareup.picasso.Picasso;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -132,7 +133,10 @@ public class FilterableAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         // avatar
         if(mChipsInput.chipHasAvatarIcon() && chip.getAvatarUri() != null) {
             itemViewHolder.mAvatar.setVisibility(View.VISIBLE);
-            itemViewHolder.mAvatar.setImageURI(chip.getAvatarUri());
+            Picasso.with(mContext)
+                    .load(chip.getAvatarUri())
+                    .placeholder(chip.getAvatarDrawable())
+                    .into(itemViewHolder.mAvatar);
         }
         else if(mChipsInput.chipHasAvatarIcon() && chip.getAvatarDrawable() != null) {
             itemViewHolder.mAvatar.setVisibility(View.VISIBLE);

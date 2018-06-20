@@ -23,6 +23,7 @@ import com.pchmn.materialchips.views.ChipsInputEditText;
 import com.pchmn.materialchips.views.DetailedChipView;
 import com.pchmn.materialchips.views.FilterableListView;
 import com.pchmn.materialchips.views.ScrollViewMaxHeight;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,6 +81,10 @@ public class ChipsInput extends ScrollViewMaxHeight {
         super(context, attrs);
         mContext = context;
         init(attrs);
+    }
+
+    public void setupPicasso(Picasso picasso) {
+        Picasso.setSingletonInstance(picasso);
     }
 
     /**

@@ -26,6 +26,7 @@ import com.pchmn.materialchips.util.ColorUtil;
 import com.pchmn.materialchips.util.LetterTileProvider;
 import com.pchmn.materialchips.util.MyWindowCallback;
 import com.pchmn.materialchips.util.ViewUtil;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -123,7 +124,9 @@ public class DetailedChipView extends RelativeLayout {
     }
 
     public void setAvatarIcon(Uri icon) {
-        mAvatarIconImageView.setImageURI(icon);
+        Picasso.with(mContext)
+                .load(icon)
+                .into(mAvatarIconImageView);
     }
 
     public void setName(String name) {
